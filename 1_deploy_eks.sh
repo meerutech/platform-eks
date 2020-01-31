@@ -1,17 +1,13 @@
-#!/bin/sh
-export NODE_COUNT=3
-export NODE_TYPE=t3.small
-export AWS_REGION=us-east-2
+#!/bin/bash
 
-if [ "$(aws eks describe-cluster --name ${EKS_CLUSTER} 2>/dev/null)" != "" ]; then
-	echo "${EKS_CLUSTER} EKS cluster already created!"
+if [ "$(aws eks describe-cluster --name ${EKS[eks_cluster]} 2>/dev/null)" != "" ]; then
+	echo "${EKS[eks_cluster]} EKS cluster already created!"
         exit 0
 fi
 
 # deploy eks cluster with 3 managed nodes
-eksctl create cluster --name=${EKS_CLUSTER} \
-		--nodes=${NODE_COUNT} \
+eksctl create cluster --name=${EKS[eks_cluster]} \
+		--nodes=${EKS[node_count]} \
 		--managed \
-		--node-type ${NODE_TYPE} \
-		--alb-ingress-access \
-		--region=${AWS_REGION}
+		--node-type ${EKS[node_type]} \
+		--region=${EKS[aws_default_region]}

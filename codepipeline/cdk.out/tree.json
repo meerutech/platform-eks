@@ -12,6 +12,166 @@
         "id": "platform-eks-pipeline",
         "path": "platform-eks-pipeline",
         "children": {
+          "CodeBuildRole": {
+            "id": "CodeBuildRole",
+            "path": "platform-eks-pipeline/CodeBuildRole",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "platform-eks-pipeline/CodeBuildRole/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "Service": [
+                              "codebuild.amazonaws.com",
+                              "ec2.amazonaws.com"
+                            ]
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    }
+                  }
+                }
+              },
+              "DefaultPolicy": {
+                "id": "DefaultPolicy",
+                "path": "platform-eks-pipeline/CodeBuildRole/DefaultPolicy",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "platform-eks-pipeline/CodeBuildRole/DefaultPolicy/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                      "aws:cdk:cloudformation:props": {
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "*",
+                              "Effect": "Allow",
+                              "Resource": "*"
+                            },
+                            {
+                              "Action": [
+                                "logs:CreateLogGroup",
+                                "logs:CreateLogStream",
+                                "logs:PutLogEvents"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": [
+                                {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":logs:us-east-2:526326026737:log-group:/aws/codebuild/",
+                                      {
+                                        "Ref": "CodebuildDeployProjectA63DBFD8"
+                                      }
+                                    ]
+                                  ]
+                                },
+                                {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":logs:us-east-2:526326026737:log-group:/aws/codebuild/",
+                                      {
+                                        "Ref": "CodebuildDeployProjectA63DBFD8"
+                                      },
+                                      ":*"
+                                    ]
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Action": [
+                                "s3:GetObject*",
+                                "s3:GetBucket*",
+                                "s3:List*"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": [
+                                {
+                                  "Fn::GetAtt": [
+                                    "PipelineArtifactsBucket22248F97",
+                                    "Arn"
+                                  ]
+                                },
+                                {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      {
+                                        "Fn::GetAtt": [
+                                          "PipelineArtifactsBucket22248F97",
+                                          "Arn"
+                                        ]
+                                      },
+                                      "/*"
+                                    ]
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Action": [
+                                "kms:Decrypt",
+                                "kms:DescribeKey"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": {
+                                "Fn::GetAtt": [
+                                  "PipelineArtifactsBucketEncryptionKey01D58D69",
+                                  "Arn"
+                                ]
+                              }
+                            },
+                            {
+                              "Action": [
+                                "kms:Decrypt",
+                                "kms:Encrypt",
+                                "kms:ReEncrypt*",
+                                "kms:GenerateDataKey*"
+                              ],
+                              "Effect": "Allow",
+                              "Resource": {
+                                "Fn::GetAtt": [
+                                  "PipelineArtifactsBucketEncryptionKey01D58D69",
+                                  "Arn"
+                                ]
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "policyName": "CodeBuildRoleDefaultPolicy829527DE",
+                        "roles": [
+                          {
+                            "Ref": "CodeBuildRole728CBADE"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
           "Pipeline": {
             "id": "Pipeline",
             "path": "platform-eks-pipeline/Pipeline",
@@ -87,7 +247,12 @@
                               ],
                               "Effect": "Allow",
                               "Principal": {
-                                "AWS": "arn:aws:iam::526326026737:role/service-role/codebuild-Platform_Build_Deploy-service-role"
+                                "AWS": {
+                                  "Fn::GetAtt": [
+                                    "CodeBuildRole728CBADE",
+                                    "Arn"
+                                  ]
+                                }
                               },
                               "Resource": "*"
                             },
@@ -100,7 +265,12 @@
                               ],
                               "Effect": "Allow",
                               "Principal": {
-                                "AWS": "arn:aws:iam::526326026737:role/service-role/codebuild-Platform_Build_Deploy-service-role"
+                                "AWS": {
+                                  "Fn::GetAtt": [
+                                    "CodeBuildRole728CBADE",
+                                    "Arn"
+                                  ]
+                                }
                               },
                               "Resource": "*"
                             }
@@ -504,135 +674,6 @@
             "id": "CodebuildDeploy",
             "path": "platform-eks-pipeline/CodebuildDeploy",
             "children": {
-              "BuildRole": {
-                "id": "BuildRole",
-                "path": "platform-eks-pipeline/CodebuildDeploy/BuildRole",
-                "children": {
-                  "Policy": {
-                    "id": "Policy",
-                    "path": "platform-eks-pipeline/CodebuildDeploy/BuildRole/Policy",
-                    "children": {
-                      "Resource": {
-                        "id": "Resource",
-                        "path": "platform-eks-pipeline/CodebuildDeploy/BuildRole/Policy/Resource",
-                        "attributes": {
-                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
-                          "aws:cdk:cloudformation:props": {
-                            "policyDocument": {
-                              "Statement": [
-                                {
-                                  "Action": [
-                                    "logs:CreateLogGroup",
-                                    "logs:CreateLogStream",
-                                    "logs:PutLogEvents"
-                                  ],
-                                  "Effect": "Allow",
-                                  "Resource": [
-                                    {
-                                      "Fn::Join": [
-                                        "",
-                                        [
-                                          "arn:",
-                                          {
-                                            "Ref": "AWS::Partition"
-                                          },
-                                          ":logs:us-east-2:526326026737:log-group:/aws/codebuild/",
-                                          {
-                                            "Ref": "CodebuildDeployProjectA63DBFD8"
-                                          }
-                                        ]
-                                      ]
-                                    },
-                                    {
-                                      "Fn::Join": [
-                                        "",
-                                        [
-                                          "arn:",
-                                          {
-                                            "Ref": "AWS::Partition"
-                                          },
-                                          ":logs:us-east-2:526326026737:log-group:/aws/codebuild/",
-                                          {
-                                            "Ref": "CodebuildDeployProjectA63DBFD8"
-                                          },
-                                          ":*"
-                                        ]
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "Action": [
-                                    "s3:GetObject*",
-                                    "s3:GetBucket*",
-                                    "s3:List*"
-                                  ],
-                                  "Effect": "Allow",
-                                  "Resource": [
-                                    {
-                                      "Fn::GetAtt": [
-                                        "PipelineArtifactsBucket22248F97",
-                                        "Arn"
-                                      ]
-                                    },
-                                    {
-                                      "Fn::Join": [
-                                        "",
-                                        [
-                                          {
-                                            "Fn::GetAtt": [
-                                              "PipelineArtifactsBucket22248F97",
-                                              "Arn"
-                                            ]
-                                          },
-                                          "/*"
-                                        ]
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "Action": [
-                                    "kms:Decrypt",
-                                    "kms:DescribeKey"
-                                  ],
-                                  "Effect": "Allow",
-                                  "Resource": {
-                                    "Fn::GetAtt": [
-                                      "PipelineArtifactsBucketEncryptionKey01D58D69",
-                                      "Arn"
-                                    ]
-                                  }
-                                },
-                                {
-                                  "Action": [
-                                    "kms:Decrypt",
-                                    "kms:Encrypt",
-                                    "kms:ReEncrypt*",
-                                    "kms:GenerateDataKey*"
-                                  ],
-                                  "Effect": "Allow",
-                                  "Resource": {
-                                    "Fn::GetAtt": [
-                                      "PipelineArtifactsBucketEncryptionKey01D58D69",
-                                      "Arn"
-                                    ]
-                                  }
-                                }
-                              ],
-                              "Version": "2012-10-17"
-                            },
-                            "policyName": "CodebuildDeployBuildRolePolicy6D7247F3",
-                            "roles": [
-                              "codebuild-Platform_Build_Deploy-service-role"
-                            ]
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              },
               "Project": {
                 "id": "Project",
                 "path": "platform-eks-pipeline/CodebuildDeploy/Project",
@@ -652,7 +693,12 @@
                           "privilegedMode": false,
                           "computeType": "BUILD_GENERAL1_SMALL"
                         },
-                        "serviceRole": "arn:aws:iam::526326026737:role/service-role/codebuild-Platform_Build_Deploy-service-role",
+                        "serviceRole": {
+                          "Fn::GetAtt": [
+                            "CodeBuildRole728CBADE",
+                            "Arn"
+                          ]
+                        },
                         "source": {
                           "type": "CODEPIPELINE",
                           "buildSpec": "buildspec.yml"
@@ -663,35 +709,6 @@
                             "Arn"
                           ]
                         }
-                      }
-                    }
-                  }
-                }
-              },
-              "AdminPolicy": {
-                "id": "AdminPolicy",
-                "path": "platform-eks-pipeline/CodebuildDeploy/AdminPolicy",
-                "children": {
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "platform-eks-pipeline/CodebuildDeploy/AdminPolicy/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
-                      "aws:cdk:cloudformation:props": {
-                        "policyDocument": {
-                          "Statement": [
-                            {
-                              "Action": "*",
-                              "Effect": "Allow",
-                              "Resource": "*"
-                            }
-                          ],
-                          "Version": "2012-10-17"
-                        },
-                        "policyName": "CodebuildDeployAdminPolicy4BA8986D",
-                        "roles": [
-                          "codebuild-Platform_Build_Deploy-service-role"
-                        ]
                       }
                     }
                   }

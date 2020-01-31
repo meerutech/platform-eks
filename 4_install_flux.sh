@@ -1,5 +1,4 @@
-#!/bin/sh
-export CONFIG_REPO=git@github.com:meerutech/platform-config
+#!/bin/bash
 
 if [ -n "$(kubectl get customresourcedefinitions | grep helmreleases.flux.weave.works)" ]; then
 	echo "flux already installed"
@@ -15,11 +14,15 @@ helm install --name flux \
 --set rbac.create=true \
 --set helmOperator.create=true \
 --set helmOperator.createCRD=false \
---set git.url=${CONFIG_REPO} \
---set git.path="repos" \
---set git-branch=master \
+--set git.url=${FLUX[config_repo]} \
+--set git.path="${FLUX[repo_path]}" \
+--set git-branch=${FLUX[repo_branch]} \
 --set prometheus.enabled=true \
 --set manifest-generation=true \
 --set syncGarbageCollection.enabled=true \
 --namespace flux \
 fluxcd/flux
+
+# fluxcli
+wget https://github.com/fluxcd/flux/releases/download/1.14.2/fluxctl_linux_amd64 -O /usr/local/bin/fluxctl
+chmod +x /usr/local/bin/fluxctl

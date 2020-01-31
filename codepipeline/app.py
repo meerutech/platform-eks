@@ -18,15 +18,11 @@ config.read('../config.ini')
 
 class CodeBuildProjects(core.Construct):
 
-    def __init__(self, scope: core.Construct, id: str, buildspec, **kwargs):
+    def __init__(self, scope: core.Construct, id: str, buildspec, codepipelinerole, **kwargs):
         super().__init__(scope, id, **kwargs)
         self.buildspec = buildspec
         self.build_image = codebuild.LinuxBuildImage.STANDARD_2_0
-        self.role = iam.Role.from_role_arn(
-            self, "BuildRole",
-            "arn:aws:iam::526326026737:role/service-role/codebuild-Platform_Build_Deploy-service-role"
-        )
-        
+        self.role = codepipelinerole
         self.project = codebuild.PipelineProject(
             self, "Project",
             environment=codebuild.BuildEnvironment(
@@ -36,22 +32,27 @@ class CodeBuildProjects(core.Construct):
             role = self.role
         )
         
-        # TODO: Don't need admin, let's make this least privilege
-        self.admin_policy = iam.Policy(
-            self, "AdminPolicy",
-            roles=[self.project.role],
-            statements=[
-                iam.PolicyStatement(
-                    actions=['*'],
-                    resources=['*'],
-                )
-            ]
-        )
-
 class EKSPipeline(core.Stack):
 
     def __init__(self, scope: core.Stack, id: str, **kwargs):
         super().__init__(scope, id, **kwargs)
+
+        # create an iam role to be assumed later by codebuild
+        self.role = iam.Role(
+            self, "CodeBuildRole",
+            assumed_by=iam.CompositePrincipal(
+                iam.ServicePrincipal('codebuild.amazonaws.com'),
+                iam.ServicePrincipal('ec2.amazonaws.com')
+            )
+        )
+
+        # TODO: Don't need admin, let's make this least privilege
+        self.role.add_to_policy(
+            iam.PolicyStatement(
+                actions=['*'],
+                resources=['*'],
+            )
+        )
 
         # create a pipeline
         self.pipeline = codepipeline.Pipeline(self, "Pipeline", pipeline_name='EKS')
@@ -61,7 +62,7 @@ class EKSPipeline(core.Stack):
         self.source_artifact = codepipeline.Artifact()
         
         # codebuild projects
-        self.codebuild_deploy = CodeBuildProjects(self, "CodebuildDeploy", buildspec='buildspec.yml')
+        self.codebuild_deploy = CodeBuildProjects(self, "CodebuildDeploy", buildspec='buildspec.yml', codepipelinerole=self.role)
         
         # add source action
         self.source_stage.add_action(codepipeline_actions.GitHubSourceAction(
