@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 if [ -f "config.ini" ]; then
 	eval "$(cat config.ini | ./ini2arr.py)"
 else
