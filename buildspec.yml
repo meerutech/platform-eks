@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - sudo curl --silent --location -o /usr/local/bin/kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/kubectl
+      - sudo chmod +x /usr/local/bin/kubectl
+      - curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+      - sudo mv -v /tmp/eksctl /usr/local/bin
+  build:
+    commands:
+        - sh -x 1_deploy_eks.sh
+        - sh -x 2_install_helm.sh
+        - sh -x 3_remove_gp2.sh
+        - sh -x 4_install_flux.sh
+        - sh -x 5_deploy_ssh_key.sh
