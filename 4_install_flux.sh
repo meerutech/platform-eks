@@ -1,6 +1,11 @@
 #!/bin/sh
 export CONFIG_REPO=git@github.com:meerutech/platform-config
 
+if [ -n "$(kubectl get customresourcedefinitions | grep helmreleases.flux.weave.works)" ]; then
+	echo "flux already installed"
+	exit 0
+fi
+
 # Add the Flux helm repo and apply the flux CRDs
 helm repo add fluxcd https://charts.fluxcd.io
 kubectl apply -f https://raw.githubusercontent.com/fluxcd/flux/helm-0.10.1/deploy-helm/flux-helm-release-crd.yaml
