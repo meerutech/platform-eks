@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 if [ "$(aws eks describe-cluster --name ${EKS[eks_cluster]} 2>/dev/null)" != "" ]; then
 	echo "${EKS[eks_cluster]} EKS cluster already created!"

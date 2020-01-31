@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 if [ -n "$(kubectl get customresourcedefinitions | grep helmreleases.flux.weave.works)" ]; then
 	echo "flux already installed"
