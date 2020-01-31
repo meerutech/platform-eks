@@ -1,5 +1,4 @@
 #!/bin/sh
-export EKS_CLUSTER=apigw-demo
 export NODE_COUNT=3
 export NODE_TYPE=t3.small
 export AWS_REGION=us-east-2
