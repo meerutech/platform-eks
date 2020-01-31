@@ -22,7 +22,7 @@ class CodeBuildProjects(core.Construct):
         super().__init__(scope, id, **kwargs)
         self.buildspec = buildspec
         self.build_image = codebuild.LinuxBuildImage.STANDARD_2_0
-        self.role = iam.Role.fromRoleArn(
+        self.role = iam.Role.from_role_arn(
             self, "BuildRole",
             "arn:aws:iam::526326026737:role/service-role/codebuild-Platform_Build_Deploy-service-role"
         )

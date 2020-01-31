@@ -7,20 +7,20 @@
         "file": "tree.json"
       }
     },
-    "api-gateway-pipeline": {
+    "platform-eks-pipeline": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://526326026737/us-east-2",
       "properties": {
-        "templateFile": "api-gateway-pipeline.template.json"
+        "templateFile": "platform-eks-pipeline.template.json"
       },
       "metadata": {
-        "/api-gateway-pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource": [
+        "/platform-eks-pipeline/Pipeline/ArtifactsBucketEncryptionKey/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PipelineArtifactsBucketEncryptionKey01D58D69",
             "trace": [
-              "new Key (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-kms/lib/key.js:145:26)",
-              "new Pipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:80:35)",
+              "new Key (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-kms/lib/key.js:145:26)",
+              "new Pipeline (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:80:35)",
               "obj._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:49)",
               "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
               "Kernel._create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:26)",
@@ -34,13 +34,13 @@
             ]
           }
         ],
-        "/api-gateway-pipeline/Pipeline/ArtifactsBucket/Resource": [
+        "/platform-eks-pipeline/Pipeline/ArtifactsBucket/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PipelineArtifactsBucket22248F97",
             "trace": [
-              "new Bucket (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-s3/lib/bucket.js:366:26)",
-              "new Pipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:85:27)",
+              "new Bucket (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-s3/lib/bucket.js:366:26)",
+              "new Pipeline (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:85:27)",
               "obj._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:49)",
               "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
               "Kernel._create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:26)",
@@ -54,13 +54,13 @@
             ]
           }
         ],
-        "/api-gateway-pipeline/Pipeline/ArtifactsBucketEncryptionKeyAlias/Resource": [
+        "/platform-eks-pipeline/Pipeline/ArtifactsBucketEncryptionKeyAlias/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PipelineArtifactsBucketEncryptionKeyAlias5C510EEE",
             "trace": [
-              "new Alias (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-kms/lib/alias.js:69:26)",
-              "new Pipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:92:13)",
+              "new Alias (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-kms/lib/alias.js:69:26)",
+              "new Pipeline (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:92:13)",
               "obj._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:49)",
               "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
               "Kernel._create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:26)",
@@ -74,13 +74,13 @@
             ]
           }
         ],
-        "/api-gateway-pipeline/Pipeline/Role/Resource": [
+        "/platform-eks-pipeline/Pipeline/Role/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PipelineRoleD68726F7",
             "trace": [
-              "new Role (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/role.js:36:22)",
-              "new Pipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:100:35)",
+              "new Role (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-iam/lib/role.js:36:22)",
+              "new Pipeline (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:100:35)",
               "obj._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:49)",
               "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
               "Kernel._create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:26)",
@@ -94,18 +94,18 @@
             ]
           }
         ],
-        "/api-gateway-pipeline/Pipeline/Role/DefaultPolicy/Resource": [
+        "/platform-eks-pipeline/Pipeline/Role/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PipelineRoleDefaultPolicyC7A05455",
             "trace": [
-              "new Policy (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/policy.js:30:26)",
-              "Role.addToPolicy (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/role.js:146:34)",
-              "Function.addToPrincipal (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/grant.js:57:65)",
-              "Function.addToPrincipalOrResource (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/grant.js:31:30)",
-              "Bucket.grant (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-s3/lib/bucket.js:275:29)",
-              "Bucket.grantReadWrite (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-s3/lib/bucket.js:224:21)",
-              "new Pipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:113:29)",
+              "new Policy (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-iam/lib/policy.js:30:26)",
+              "Role.addToPolicy (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-iam/lib/role.js:146:34)",
+              "Function.addToPrincipal (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-iam/lib/grant.js:57:65)",
+              "Function.addToPrincipalOrResource (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-iam/lib/grant.js:31:30)",
+              "Bucket.grant (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-s3/lib/bucket.js:275:29)",
+              "Bucket.grantReadWrite (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-s3/lib/bucket.js:224:21)",
+              "new Pipeline (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:113:29)",
               "obj._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:49)",
               "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
               "Kernel._create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:26)",
@@ -119,12 +119,12 @@
             ]
           }
         ],
-        "/api-gateway-pipeline/Pipeline/Resource": [
+        "/platform-eks-pipeline/Pipeline/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PipelineC660917D",
             "trace": [
-              "new Pipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:103:30)",
+              "new Pipeline (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:103:30)",
               "obj._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:49)",
               "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
               "Kernel._create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:26)",
@@ -138,16 +138,16 @@
             ]
           }
         ],
-        "/api-gateway-pipeline/Pipeline/Source/Pull_Source/WebhookResource": [
+        "/platform-eks-pipeline/Pipeline/Source/Pull_Source/WebhookResource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "PipelineSourcePullSourceWebhookResourceFD1DCEBC",
             "trace": [
-              "GitHubSourceAction.bound (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline-actions/lib/github/source-action.js:44:13)",
-              "GitHubSourceAction.bind (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline-actions/lib/action.js:46:21)",
-              "Pipeline._attachActionToPipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:212:37)",
-              "Stage.attachActionToPipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:108:31)",
-              "Stage.addAction (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:67:33)",
+              "GitHubSourceAction.bound (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline-actions/lib/github/source-action.js:44:13)",
+              "GitHubSourceAction.bind (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline-actions/lib/action.js:46:21)",
+              "Pipeline._attachActionToPipeline (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:212:37)",
+              "Stage.attachActionToPipeline (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:108:31)",
+              "Stage.addAction (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:67:33)",
               "_wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7589:51)",
               "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
               "ret._ensureSync (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7589:25)",
@@ -162,16 +162,16 @@
             ]
           }
         ],
-        "/api-gateway-pipeline/Pipeline/Validate/Validate_Changes/CodePipelineActionRole/Resource": [
+        "/platform-eks-pipeline/Pipeline/Deploy/Deploy_EKS_Cluster/CodePipelineActionRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "PipelineValidateValidateChangesCodePipelineActionRole26BECF82",
+            "data": "PipelineDeployDeployEKSClusterCodePipelineActionRoleB5196067",
             "trace": [
-              "new Role (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/role.js:36:22)",
-              "Pipeline.getRoleForAction (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:350:26)",
-              "Pipeline._attachActionToPipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:208:33)",
-              "Stage.attachActionToPipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:108:31)",
-              "Stage.addAction (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:67:33)",
+              "new Role (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-iam/lib/role.js:36:22)",
+              "Pipeline.getRoleForAction (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:350:26)",
+              "Pipeline._attachActionToPipeline (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:208:33)",
+              "Stage.attachActionToPipeline (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:108:31)",
+              "Stage.addAction (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:67:33)",
               "_wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7589:51)",
               "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
               "ret._ensureSync (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7589:25)",
@@ -186,18 +186,18 @@
             ]
           }
         ],
-        "/api-gateway-pipeline/Pipeline/Validate/Validate_Changes/CodePipelineActionRole/DefaultPolicy/Resource": [
+        "/platform-eks-pipeline/Pipeline/Deploy/Deploy_EKS_Cluster/CodePipelineActionRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "PipelineValidateValidateChangesCodePipelineActionRoleDefaultPolicyFDBC7AAA",
+            "data": "PipelineDeployDeployEKSClusterCodePipelineActionRoleDefaultPolicy57D857D2",
             "trace": [
-              "new Policy (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/policy.js:30:26)",
-              "Role.addToPolicy (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/role.js:146:34)",
-              "CodeBuildAction.bound (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline-actions/lib/codebuild/build-action.js:67:22)",
-              "CodeBuildAction.bind (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline-actions/lib/action.js:46:21)",
-              "Pipeline._attachActionToPipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:212:37)",
-              "Stage.attachActionToPipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:108:31)",
-              "Stage.addAction (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:67:33)",
+              "new Policy (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-iam/lib/policy.js:30:26)",
+              "Role.addToPolicy (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-iam/lib/role.js:146:34)",
+              "CodeBuildAction.bound (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline-actions/lib/codebuild/build-action.js:67:22)",
+              "CodeBuildAction.bind (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline-actions/lib/action.js:46:21)",
+              "Pipeline._attachActionToPipeline (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:212:37)",
+              "Stage.attachActionToPipeline (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:108:31)",
+              "Stage.addAction (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:67:33)",
               "_wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7589:51)",
               "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
               "ret._ensureSync (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7589:25)",
@@ -212,88 +212,16 @@
             ]
           }
         ],
-        "/api-gateway-pipeline/Pipeline/Approval/Approval/CodePipelineActionRole/Resource": [
+        "/platform-eks-pipeline/CodebuildDeploy/BuildRole/Policy/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "PipelineApprovalCodePipelineActionRole57856A07",
+            "data": "CodebuildDeployBuildRolePolicy6D7247F3",
             "trace": [
-              "new Role (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/role.js:36:22)",
-              "Pipeline.getRoleForAction (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:350:26)",
-              "Pipeline._attachActionToPipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:208:33)",
-              "Stage.attachActionToPipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:108:31)",
-              "Stage.addAction (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:67:33)",
-              "_wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7589:51)",
-              "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
-              "ret._ensureSync (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7589:25)",
-              "Kernel._ensureSync (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8198:20)",
-              "Kernel.invoke (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7588:26)",
-              "KernelHost.processRequest (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7296:28)",
-              "KernelHost.run (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7236:14)",
-              "Immediate.setImmediate [as _onImmediate] (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7239:37)",
-              "runCallback (timers.js:705:18)",
-              "tryOnImmediate (timers.js:676:5)",
-              "processImmediate (timers.js:658:5)"
-            ]
-          }
-        ],
-        "/api-gateway-pipeline/Pipeline/Deploy/Deploy_Changes/CodePipelineActionRole/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "PipelineDeployDeployChangesCodePipelineActionRole1F02D8F7",
-            "trace": [
-              "new Role (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/role.js:36:22)",
-              "Pipeline.getRoleForAction (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:350:26)",
-              "Pipeline._attachActionToPipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:208:33)",
-              "Stage.attachActionToPipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:108:31)",
-              "Stage.addAction (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:67:33)",
-              "_wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7589:51)",
-              "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
-              "ret._ensureSync (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7589:25)",
-              "Kernel._ensureSync (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8198:20)",
-              "Kernel.invoke (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7588:26)",
-              "KernelHost.processRequest (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7296:28)",
-              "KernelHost.run (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7236:14)",
-              "Immediate.setImmediate [as _onImmediate] (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7239:37)",
-              "runCallback (timers.js:705:18)",
-              "tryOnImmediate (timers.js:676:5)",
-              "processImmediate (timers.js:658:5)"
-            ]
-          }
-        ],
-        "/api-gateway-pipeline/Pipeline/Deploy/Deploy_Changes/CodePipelineActionRole/DefaultPolicy/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "PipelineDeployDeployChangesCodePipelineActionRoleDefaultPolicyB3DA9A78",
-            "trace": [
-              "new Policy (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/policy.js:30:26)",
-              "Role.addToPolicy (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/role.js:146:34)",
-              "CodeBuildAction.bound (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline-actions/lib/codebuild/build-action.js:67:22)",
-              "CodeBuildAction.bind (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline-actions/lib/action.js:46:21)",
-              "Pipeline._attachActionToPipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.js:212:37)",
-              "Stage.attachActionToPipeline (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:108:31)",
-              "Stage.addAction (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codepipeline/lib/stage.js:67:33)",
-              "_wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7589:51)",
-              "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
-              "ret._ensureSync (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7589:25)",
-              "Kernel._ensureSync (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8198:20)",
-              "Kernel.invoke (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7588:26)",
-              "KernelHost.processRequest (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7296:28)",
-              "KernelHost.run (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7236:14)",
-              "Immediate.setImmediate [as _onImmediate] (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7239:37)",
-              "runCallback (timers.js:705:18)",
-              "tryOnImmediate (timers.js:676:5)",
-              "processImmediate (timers.js:658:5)"
-            ]
-          }
-        ],
-        "/api-gateway-pipeline/CodebuildValidate/Project/Role/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CodebuildValidateProjectRole8D99858A",
-            "trace": [
-              "new Role (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/role.js:36:22)",
-              "new Project (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codebuild/lib/project.js:238:35)",
-              "new PipelineProject (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codebuild/lib/pipeline-project.js:11:9)",
+              "new Policy (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-iam/lib/policy.js:30:26)",
+              "Import.addToPolicy (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-iam/lib/role.js:95:42)",
+              "PipelineProject.addToRolePolicy (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codebuild/lib/project.js:46:23)",
+              "new Project (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codebuild/lib/project.js:302:14)",
+              "new PipelineProject (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codebuild/lib/pipeline-project.js:11:9)",
               "obj._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:49)",
               "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
               "Kernel._create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:26)",
@@ -307,119 +235,13 @@
             ]
           }
         ],
-        "/api-gateway-pipeline/CodebuildValidate/Project/Role/DefaultPolicy/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CodebuildValidateProjectRoleDefaultPolicyDC1CCA3B",
-            "trace": [
-              "new Policy (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/policy.js:30:26)",
-              "Role.addToPolicy (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/role.js:146:34)",
-              "PipelineProject.addToRolePolicy (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codebuild/lib/project.js:46:23)",
-              "new Project (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codebuild/lib/project.js:302:14)",
-              "new PipelineProject (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codebuild/lib/pipeline-project.js:11:9)",
-              "obj._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:49)",
-              "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
-              "Kernel._create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:26)",
-              "Kernel.create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7509:21)",
-              "KernelHost.processRequest (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7296:28)",
-              "KernelHost.run (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7236:14)",
-              "Immediate.setImmediate [as _onImmediate] (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7239:37)",
-              "runCallback (timers.js:705:18)",
-              "tryOnImmediate (timers.js:676:5)",
-              "processImmediate (timers.js:658:5)"
-            ]
-          }
-        ],
-        "/api-gateway-pipeline/CodebuildValidate/Project/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CodebuildValidateProject36727441",
-            "trace": [
-              "new Project (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codebuild/lib/project.js:275:26)",
-              "new PipelineProject (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codebuild/lib/pipeline-project.js:11:9)",
-              "obj._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:49)",
-              "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
-              "Kernel._create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:26)",
-              "Kernel.create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7509:21)",
-              "KernelHost.processRequest (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7296:28)",
-              "KernelHost.run (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7236:14)",
-              "Immediate.setImmediate [as _onImmediate] (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7239:37)",
-              "runCallback (timers.js:705:18)",
-              "tryOnImmediate (timers.js:676:5)",
-              "processImmediate (timers.js:658:5)"
-            ]
-          }
-        ],
-        "/api-gateway-pipeline/CodebuildValidate/AdminPolicy/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CodebuildValidateAdminPolicy5B3474B8",
-            "trace": [
-              "new Policy (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/policy.js:30:26)",
-              "obj._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:49)",
-              "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
-              "Kernel._create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:26)",
-              "Kernel.create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7509:21)",
-              "KernelHost.processRequest (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7296:28)",
-              "KernelHost.run (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7236:14)",
-              "Immediate.setImmediate [as _onImmediate] (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7239:37)",
-              "runCallback (timers.js:705:18)",
-              "tryOnImmediate (timers.js:676:5)",
-              "processImmediate (timers.js:658:5)"
-            ]
-          }
-        ],
-        "/api-gateway-pipeline/CodebuildDeploy/Project/Role/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CodebuildDeployProjectRoleADF4F8A7",
-            "trace": [
-              "new Role (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/role.js:36:22)",
-              "new Project (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codebuild/lib/project.js:238:35)",
-              "new PipelineProject (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codebuild/lib/pipeline-project.js:11:9)",
-              "obj._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:49)",
-              "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
-              "Kernel._create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:26)",
-              "Kernel.create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7509:21)",
-              "KernelHost.processRequest (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7296:28)",
-              "KernelHost.run (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7236:14)",
-              "Immediate.setImmediate [as _onImmediate] (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7239:37)",
-              "runCallback (timers.js:705:18)",
-              "tryOnImmediate (timers.js:676:5)",
-              "processImmediate (timers.js:658:5)"
-            ]
-          }
-        ],
-        "/api-gateway-pipeline/CodebuildDeploy/Project/Role/DefaultPolicy/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CodebuildDeployProjectRoleDefaultPolicy8D2CA255",
-            "trace": [
-              "new Policy (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/policy.js:30:26)",
-              "Role.addToPolicy (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/role.js:146:34)",
-              "PipelineProject.addToRolePolicy (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codebuild/lib/project.js:46:23)",
-              "new Project (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codebuild/lib/project.js:302:14)",
-              "new PipelineProject (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codebuild/lib/pipeline-project.js:11:9)",
-              "obj._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:49)",
-              "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
-              "Kernel._create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:26)",
-              "Kernel.create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7509:21)",
-              "KernelHost.processRequest (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7296:28)",
-              "KernelHost.run (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7236:14)",
-              "Immediate.setImmediate [as _onImmediate] (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7239:37)",
-              "runCallback (timers.js:705:18)",
-              "tryOnImmediate (timers.js:676:5)",
-              "processImmediate (timers.js:658:5)"
-            ]
-          }
-        ],
-        "/api-gateway-pipeline/CodebuildDeploy/Project/Resource": [
+        "/platform-eks-pipeline/CodebuildDeploy/Project/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CodebuildDeployProjectA63DBFD8",
             "trace": [
-              "new Project (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codebuild/lib/project.js:275:26)",
-              "new PipelineProject (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-codebuild/lib/pipeline-project.js:11:9)",
+              "new Project (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codebuild/lib/project.js:275:26)",
+              "new PipelineProject (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-codebuild/lib/pipeline-project.js:11:9)",
               "obj._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:49)",
               "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
               "Kernel._create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:26)",
@@ -433,12 +255,12 @@
             ]
           }
         ],
-        "/api-gateway-pipeline/CodebuildDeploy/AdminPolicy/Resource": [
+        "/platform-eks-pipeline/CodebuildDeploy/AdminPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CodebuildDeployAdminPolicy4BA8986D",
             "trace": [
-              "new Policy (/tmp/jsii-kernel-VUageF/node_modules/@aws-cdk/aws-iam/lib/policy.js:30:26)",
+              "new Policy (/tmp/jsii-kernel-IttqXE/node_modules/@aws-cdk/aws-iam/lib/policy.js:30:26)",
               "obj._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:49)",
               "Kernel._wrapSandboxCode (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8222:20)",
               "Kernel._create (/home/ec2-user/.local/lib/python3.6/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7762:26)",
