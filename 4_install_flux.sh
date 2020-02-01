@@ -14,9 +14,9 @@ helm install --name flux \
 --set rbac.create=true \
 --set helmOperator.create=true \
 --set helmOperator.createCRD=false \
---set git.url=${FLUX_CONFIG_REPO} \
---set git.path="${FLUX_REPO_PATH}" \
---set git-branch=${FLUX_REPO_BRANCH} \
+--set git.url=${FLUX_config_repo} \
+--set git.path="${FLUX_repo_path}" \
+--set git-branch=${FLUX_repo_branch} \
 --set prometheus.enabled=true \
 --set manifest-generation=true \
 --set syncGarbageCollection.enabled=true \
