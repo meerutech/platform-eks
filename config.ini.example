@@ -10,7 +10,6 @@ REPO_PATH = deployments
 REPO_BRANCH = master
 GITHUB_USER = buildmeerutech
 GITHUB_API_ENDPOINT=https://api.github.com/repos/meerutech/platform-config
-GITHUB_DEPLOY_KEY=flux-deploy-key
 
 [CODEPIPELINE]
 # Setting separately as the region/account may be different for pipelines
