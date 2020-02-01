@@ -1,5 +1,5 @@
 #!/bin/bash -x
-eksctl utils write-kubeconfig --cluster ${EKS[eks_cluster]}
+eksctl utils write-kubeconfig --cluster ${EKS_CLUSTER}
 # check if helm is already installed
 if [ -n "$(kubectl get serviceaccounts --namespace=kube-system tiller 2>/dev/null)" ]; then
 	echo "helm already installed!"
