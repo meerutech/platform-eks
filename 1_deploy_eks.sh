@@ -1,5 +1,4 @@
 #!/bin/bash -x
-echo $AAA
 if [ "$(aws eks describe-cluster --name ${EKS_CLUSTER} --region ${EKS_AWS_REGION} 2>/dev/null)" != "" ]; then
 	echo "${EKS_CLUSTER} EKS cluster already created!"
         exit 0
