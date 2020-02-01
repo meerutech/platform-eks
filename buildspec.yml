@@ -10,7 +10,7 @@ phases:
       - curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /usr/local/bin
   build:
     commands:
-        - $(cat config.ini | ./ini2arr.py)
+        - . $PWD/0_envs.sh
         - ./1_deploy_eks.sh
         - ./2_install_helm.sh
         - ./3_remove_gp2.sh

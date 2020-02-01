@@ -6,3 +6,5 @@ else
 	echo "config.ini missing!"
 	#exit 1
 fi
+
+AAA=HEKK
