@@ -22,7 +22,3 @@ helm install --name flux \
 --set syncGarbageCollection.enabled=true \
 --namespace flux \
 fluxcd/flux
-
-# fluxcli
-wget https://github.com/fluxcd/flux/releases/download/1.14.2/fluxctl_linux_amd64 -O /usr/local/bin/fluxctl
-chmod +x /usr/local/bin/fluxctl
