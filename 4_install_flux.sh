@@ -22,3 +22,8 @@ helm install --name flux \
 --set syncGarbageCollection.enabled=true \
 --namespace flux \
 fluxcd/flux
+
+while [ -z "$(kubectl -n flux get pods 2>/dev/null)" ] ;do
+        echo "waiting for flux to get ready"
+        sleep 1
+done

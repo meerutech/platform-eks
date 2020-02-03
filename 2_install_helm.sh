@@ -37,3 +37,8 @@ kubectl apply -f /tmp/rbac.yaml
 /tmp/get_helm.sh
 
 helm init --service-account tiller
+
+while [ -z "$(kubectl get deployments --namespace kube-system tiller-deploy 2>/dev/null)" ] ;do
+	echo "waiting for helm to get ready"
+	sleep 1
+done
