@@ -10,7 +10,7 @@ KEY=$(fluxctl --k8s-fwd-ns flux identity)
 TITLE=${KEY/* }
 
 if [ -n "$(curl -s -u ${FLUX_github_user}:${GITHUB_API_TOKEN} ${FLUX_github_api_endpoint}/keys \
-    | jq '.[] | select(.title=="${TITLE}").id')" ];then
+    | jq -arg v "$TITLE" '.[] | select(.title==[$v]).id')" ];then
     echo "deploy key already uploaded into github"
     exit 0
 fi
