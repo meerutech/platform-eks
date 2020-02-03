@@ -38,7 +38,12 @@ kubectl apply -f /tmp/rbac.yaml
 
 helm init --service-account tiller
 
-while [ -z "$(kubectl get deployments --namespace kube-system tiller-deploy 2>/dev/null)" ] ;do
-	echo "waiting for helm to get ready"
-	sleep 1
+while true; do
+	cnt=$(kubectl get deployments --namespace kube-system tiller-deploy -o json 2>/dev/null| jq .status.readyReplicas)
+	if [ "$cnt" == "null" -o $(($cnt+0)) -lt 1 ]; then
+		echo "waiting for helm to get ready"
+		sleep 1
+	else
+		break
+	fi
 done
