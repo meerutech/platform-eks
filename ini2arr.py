@@ -3,7 +3,7 @@
 import sys, configparser
 
 config = configparser.ConfigParser()
-config.readfp(sys.stdin)
+config.read_file(sys.stdin)
 
 for sec in config.sections():
     for key, val in config.items(sec):
